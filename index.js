@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.PORT;
+
 
 // Middleware
 app.use(bodyParser.json());
@@ -80,6 +80,6 @@ app.delete('/items/:id', async (req, res) => {
 });
 
 // Iniciar el servidor
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
 });
